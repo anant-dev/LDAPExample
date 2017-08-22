@@ -14,11 +14,15 @@ import javax.sql.DataSource;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.stereotype.Repository;
 
 /**
  *
  * @author anants
  */
+// use rest controller and security in the application
+// also add a service layer
+@Repository
 public class EmployeeDaoImpl implements EmployeeDao{
 
     JdbcTemplate template;

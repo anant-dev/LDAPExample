@@ -54,8 +54,8 @@ public class WebConfiguration  extends WebMvcConfigurerAdapter{
 		return dataSource;
 	}
 	
-	@Bean
-	public EmployeeDao getEmployeeDao() {
-		return new EmployeeDaoImpl(getDataSource());
-	}
+//	@Bean
+//	public EmployeeDao getEmployeeDao() {
+//		return new EmployeeDaoImpl(getDataSource());
+//	}
 }
