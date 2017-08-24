@@ -1,8 +1,10 @@
 C:\Users\anants\Documents\NetBeansProjects\Spring security\EmployeeInfo\src\main\java\com\mindfire\config\SpringMvcInitializer.java
 C:\Users\anants\Documents\NetBeansProjects\Spring security\EmployeeInfo\src\main\java\com\mindfire\beans\Employee.java
+C:\Users\anants\Documents\NetBeansProjects\Spring security\EmployeeInfo\src\main\java\com\mindfire\service\EmployeeManager.java
 C:\Users\anants\Documents\NetBeansProjects\Spring security\EmployeeInfo\src\main\java\com\mindfire\config\SpringSecurityInitializer.java
 C:\Users\anants\Documents\NetBeansProjects\Spring security\EmployeeInfo\src\main\java\com\mindfire\dao\EmployeeDao.java
 C:\Users\anants\Documents\NetBeansProjects\Spring security\EmployeeInfo\src\main\java\com\mindfire\config\WebSecurityConfig.java
 C:\Users\anants\Documents\NetBeansProjects\Spring security\EmployeeInfo\src\main\java\com\mindfire\controller\EmployeeController.java
 C:\Users\anants\Documents\NetBeansProjects\Spring security\EmployeeInfo\src\main\java\com\mindfire\config\WebConfiguration.java
 C:\Users\anants\Documents\NetBeansProjects\Spring security\EmployeeInfo\src\main\java\com\mindfire\dao\EmployeeDaoImpl.java
+C:\Users\anants\Documents\NetBeansProjects\Spring security\EmployeeInfo\src\main\java\com\mindfire\service\EmployeeManagerImpl.java

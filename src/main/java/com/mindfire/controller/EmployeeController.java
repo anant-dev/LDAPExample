@@ -8,8 +8,8 @@ package com.mindfire.controller;
 import com.mindfire.dao.EmployeeDaoImpl;
 import com.mindfire.beans.Employee;
 import com.mindfire.dao.EmployeeDao;
+import com.mindfire.service.EmployeeManager;
 import java.util.List;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -28,7 +28,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class EmployeeController {
 
     @Autowired
-    EmployeeDao employeeDao;
+    EmployeeManager employeeManger;
 
     @RequestMapping("/empform")
     public ModelAndView showform() {
@@ -37,14 +37,14 @@ public class EmployeeController {
 
     @RequestMapping(value = "/save", method = RequestMethod.POST)
     public ModelAndView save(@ModelAttribute("emp") Employee emp) {
-        employeeDao.saveEmp(emp);
+        employeeManger.saveEmp(emp);
         return new ModelAndView("redirect:/viewemp");//will redirect to viewemp request mapping  
     }
 
     /* It provides list of employees in model object */
     @RequestMapping("/viewemp")
     public ModelAndView viewemp() {
-        List<Employee> list = employeeDao.getEmployees();
+        List<Employee> list = employeeManger.getEmployees();
         return new ModelAndView("viewemp", "list", list);
     }
 
@@ -52,21 +52,21 @@ public class EmployeeController {
      * The @PathVariable puts URL data into variable.*/
     @RequestMapping(value = "/editemp/{id}")
     public ModelAndView edit(@PathVariable int id) {
-        Employee emp = employeeDao.getEmpById(id);
+        Employee emp = employeeManger.getEmpById(id);
         return new ModelAndView("empeditform", "emp", emp);
     }
 
     /* It updates model object. */
     @RequestMapping(value = "/editsave", method = RequestMethod.POST)
     public ModelAndView editsave(@ModelAttribute("emp") Employee emp) {
-        employeeDao.updateEmp(emp);
+        employeeManger.updateEmp(emp);
         return new ModelAndView("redirect:/viewemp");
     }
 
     /* It deletes record for the given id in URL and redirects to /viewemp */
     @RequestMapping(value = "/deleteemp/{id}", method = RequestMethod.GET)
     public ModelAndView delete(@PathVariable int id) {
-        employeeDao.deleteEmp(id);
+        employeeManger.deleteEmp(id);
         return new ModelAndView("redirect:/viewemp");
     }
 
