@@ -42,7 +42,8 @@
                     <%}%>
                 </table>  
                 <br/>  
-                <a href="empform" class="waves-effect waves-light btn pink darken-1">Add New Employee</a> 
+                <a href="empform" class="waves-effect waves-light btn pink darken-1">Add New Employee</a>
+                <a href="logout" class="waves-effect waves-light btn pink darken-1" style="margin-left: 100px">Logout</a>
            
         </div>
 

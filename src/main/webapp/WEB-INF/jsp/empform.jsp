@@ -15,9 +15,11 @@
     </head>
     <body>
         <nav>
-            <div class="nav-wrapper pink darken-3">
+            <div class="nav-wrapper pink darken-3 ">
                 <a href="#" class="brand-logo center">Employee Info</a>
-
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="logout">Logout</a></li>
+                </ul>
             </div>
         </nav>
         <div class="container  center" style="height:650px">
