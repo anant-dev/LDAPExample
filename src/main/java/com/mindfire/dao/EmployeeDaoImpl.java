@@ -23,29 +23,28 @@ import org.springframework.stereotype.Repository;
 // use rest controller and security in the application
 // also add a service layer
 @Repository
-public class EmployeeDaoImpl implements EmployeeDao{
+public class EmployeeDaoImpl implements EmployeeDao {
 
     JdbcTemplate template;
 
     public EmployeeDaoImpl(DataSource dataSource) {
-                this.template = new JdbcTemplate(dataSource);
+        this.template = new JdbcTemplate(dataSource);
     }
+
     public int saveEmp(Employee emp) {
         String sql = "INSERT into employee_details(emp_id,name,salary,designation,domain) "
-                + "values(" + emp.getEmp_id() + ",\"" + emp.getName() + "\"," + emp.getSalary() + ",\"" + emp.getDesignation() + "\",\"" + emp.getDomain() + "\")";
-        return template.update(sql);
+                + "values(?,?,?,?,?)";
+        return template.update(sql, new Object[]{emp.getEmp_id(), emp.getName(), emp.getSalary(), emp.getDesignation(), emp.getDomain()});
     }
 
     public int updateEmp(Employee emp) {
-        String sql = "update employee_details set name =\"" + emp.getName() + "\",salary =" + emp.getSalary()
-                + ",designation =\"" + emp.getDesignation() + "\",domain =\"" + emp.getDomain() + "\"  where id= "+emp.getId();
-        System.out.println("queryy --> "+sql);
-        return template.update(sql);
+        String sql = "update employee_details set name = ? ,salary = ? ,designation = ? ,domain = ?  where id= ?";
+        return template.update(sql, new Object[]{emp.getName(), emp.getSalary(), emp.getDesignation(), emp.getDomain(), emp.getId()});
     }
 
     public int deleteEmp(int emp_id) {
-        String sql = "delete from employee_details where id=" + emp_id;
-        return template.update(sql);
+        String sql = "delete from employee_details where id= ?";
+        return template.update(sql, new Object[]{emp_id});
     }
 
     public Employee getEmpById(int id) {
